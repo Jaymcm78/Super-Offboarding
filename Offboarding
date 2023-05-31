@@ -106,7 +106,7 @@ back_up_emails_to_achive_user () {
     case $yn in
         [yY][eE][sS] )
             echo "You said yes, backing up emails...";
-            $gyb --email $user --service-account
+            $gyb --email $user --service-account;;
         [nN][oO] )
             echo "You said no, continuing...";;
         * ) echo "Invalid input, exiting...";
