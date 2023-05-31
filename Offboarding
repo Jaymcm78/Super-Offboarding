@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # Set path to your GAMADV-XTD3 install
-gam="/bin/gamadv-xtd3/gam"
+gam="/home/jaime_mcmullin/bin/gamadv-xtd3/gam"
+
+#Set path to your GYD
+gyb="/home/jaime_mcmullin/bin/gyb/gyb"
 
 printf "Please enter the email of the user you wish to archive: "
 read user
@@ -115,7 +118,7 @@ back_up_emails_to_achive_user () {
 }
 # Restore emails
 restore_emails () {
-    printf "\restoring emails"
+    printf "\Restoring Emails"
     $gyb --email archive.2023@super.com --action restore --local-folder "GYB-GMail-Backup-$user" --service-account --label-restored $user
 }
 # Run all functions of the script, comment a function out here if you wish to not perform a particular step
@@ -129,6 +132,6 @@ deprovision_user
 wipe_mobile_devices
 remove_groups
 remove_from_directory
-# archive_user
+#archive_user
 back_up_emails_to_achive_user
 restore_emails
